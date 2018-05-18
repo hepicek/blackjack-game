@@ -7,8 +7,13 @@ let playerCounter = 0;
 let hitCount = 0;
 let currentScorePlayer = 0;
 let currentScoreDealer = 0;
+let bankroll = 1000;
+let currentBet = 0;
 
 $(document).ready(function () {
+
+    $('#betvalue').html('$0');
+    $('#bankroll').html('$' + bankroll);
 
     $('#startgame').on('click', function () {
         $('.blackjackboard').css('display', 'block');
@@ -31,41 +36,38 @@ $(document).ready(function () {
     });
 
     $('#stand').on('click', function () {
-
         while (currentScoreDealer <= 17) {
-            setTimeout(function () {
-                drawDelear();
-            }, 100);
-            
+            drawDelear();
         }
+
+        setTimeout(function () {
+            determinWinner();
+        }, 100);
+        setTimeout(function () {
+            resetTurn();
+        }, 3000);
 
     });
 
-    $('#endgame').on('click', function () {
-        bet = 0;
-        hasBeenClicked = 'false';
-        cards = [];
-        playerCounter = 0;
-        hitCount = 0;
-        currentScorePlayer = 0;
-        currentScoreDealer = 0;
+    $('#newgame').on('click', function () {
+        gameReset();
     });
 });
 
 function placeBet() {
     $('.chip').on('click', function () {
         if (hasBeenClicked == 'false') {
-            let currentBet = parseInt($(this).html());
+            currentBet = parseInt($(this).html());
             bet += currentBet;
             $('#betvalue').html('$' + bet);
         }
+        betCheck();
     });
     $('#placeBet').on('click', function () {
         $('#betvalue').css('background-color', 'red');
         hasBeenClicked = 'true';
-        let currentBankroll = $('#bankroll').html();
-        currentBankroll -= bet;
-        $('#bankroll').html('$' + currentBankroll);
+        bankroll -= bet;
+        $('#bankroll').html('$' + bankroll);
     });
 }
 
@@ -108,10 +110,78 @@ function scoreCounter(currentScore) {
 
 function hasLost() {
     if (currentScorePlayer > 21) {
-        alert('you lost')
+        $('#winner').html('You lose');
     }
 }
 
+function determinWinner() {
+    if (currentScorePlayer > currentScoreDealer && currentScorePlayer < 22 || currentScoreDealer > 21) {
+        $('#winner').html('You win');
+        bankroll += bet * 2;
+        $('#bankroll').html('$' + bankroll);
+    } else if (currentScorePlayer == currentScoreDealer) {
+        bankroll += bet;
+        $('#winner').html('Draw');
+    } else {
+        $('#winner').html('You lose');
+    }
+
+    if (bankroll == 0) {
+        alert('Game over loser');
+    }
+}
+
+function gameReset() {
+    currentBet = 0;
+    bet = 0;
+    hasBeenClicked = 'false';
+    cards = [];
+    playerCounter = 0;
+    hitCount = 0;
+    currentScorePlayer = 0;
+    currentScoreDealer = 0;
+    cards = generate_cards();
+    shuffle_array(cards);
+    $('.card').remove();
+    $('#playerScore').html('');
+    $('#dealerScore').html('');
+    $('#bankroll').html('1000');
+    $('#betvalue').html('$0');
+    $('#winner').html('');
+}
+
+function resetTurn() {
+    currentBet = 0;
+    bet = 0;
+    hasBeenClicked = 'false';
+    cards = [];
+    playerCounter = 0;
+    hitCount = 0;
+    currentScorePlayer = 0;
+    currentScoreDealer = 0;
+    cards = generate_cards();
+    shuffle_array(cards);
+    $('.card').remove();
+    $('#playerScore').html('');
+    $('#dealerScore').html('');
+    $('#betvalue').html('$0');
+    $('#winner').html('');
+    $('#secretMessage').html('');    
+    $('#betvalue').css('background-color', '');
+}
+
+function betCheck() {
+    c(bet);
+    if (bet > bankroll) {
+        $('#secretMessage').html('Place lower bet than $' + bankroll);
+        $('#betvalue').html('$0');
+        setTimeout(function () {
+            resetTurn();
+        }, 1000);
+        
+
+    }
+}
 
 function c(msg) {
     console.log(msg);

@@ -11,30 +11,31 @@
 
 <body>
 
-    <div class="startgame">
-        <button id="startgame">Start Game</button>
-        <button id="endgame">End Game</button>
-  
-      </div>
+  <div class="startgame">
+    <button id="startgame">Start Game</button>
+    <button id="newgame">New Game</button>
+
+  </div>
   <div class="blackjackboard">
 
     <h1>BlackJack</h1>
 
- <div class="header">
+    <div class="header">
       <h2>Dealer</h2>
-      <h4>Score: <span id="dealerScore"></span></h4>
- </div>
+      <h4>Score:
+        <span id="dealerScore"></span>
+      </h4>
+    </div>
     <div id="dealerCards" class="cards"></div>
 
-<div class="header">
+    <div class="header">
       <h2>Player</h2>
-      <h4>Score: <span id="playerScore"></span></h4>      
-</div>
-    <div id="playersCards" class="cards">
-      <div class="card"></div>
+      <h4>Score:
+        <span id="playerScore"></span>
+      </h4>
     </div>
-
-
+    <div id="playersCards" class="cards">
+    </div>
 
     <div class="bet">
       <div class="chips">
@@ -52,18 +53,19 @@
     <div class="score">
       <div class="bankroll">
         <h3>Bankroll</h3>
-        <p id="bankroll">1000</p>
+        <p id="bankroll"></p>
       </div>
       <div class="betvalue">
         <h3>Bet</h3>
-        <p id="betvalue">0</p>
+        <p id="betvalue"></p>
       </div>
       <div class="win">
         <h3>Win</h3>
-        <p>1</p>
+        <p id="winner"></p>
       </div>
     </div>
 
+    <p id="secretMessage"></p>
   </div>
 
 
