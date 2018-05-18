@@ -1,3 +1,79 @@
 @import "normalize";
 @import "cards";
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding-top: 2rem;
+}
+
+h2 {
+    text-align: left;
+}
+
+
+.blackjackboard {
+    text-align: center;
+    background-color: #005E00;
+    margin: 0 auto;
+    padding: 0;
+    width: 800px;
+    height: 100vh;
+    .cards {
+        display: flex;
+        justify-content: center;
+        height: 125px;
+        width: auto;
+        border: 1px solid black;
+        padding: 0.5rem;
+        .card {
+            background-image: url('../img/clubs-2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 80px;
+            height: auto;
+        }
+    }
+    .bet {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+        align-items: center;
+        .chips {
+            display: flex;
+        }
+            .chip {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            padding-top: 16px;
+            margin-left: 0.5rem;
+        }
+        button {
+            background-color: #AA0055;
+            border: none;
+            width: 130px;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+        }
+    }
+    .score {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+}
+
