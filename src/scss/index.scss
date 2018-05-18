@@ -5,17 +5,21 @@
 }
 
 body {
-    background-color: black;
+    background-image: url(../../public/img/casino.jpg);
+    background-size: cover;
     color: white;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
-
+.container{
+    display: flex;
+    justify-content: center;
+}
 h1 {
-    text-align: center;
     margin: 0;
     padding-top: 2rem;
+    margin-left: 12rem;
 }
 
 h2 {
@@ -26,15 +30,17 @@ h2 {
     display: none;
     text-align: center;
     background-color: #005E00;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     width: 800px;
-    height: 100vh;
+    min-height: 100vh;
+    .heading{
+        display: flex;
+    }
     .header {
         display: flex;
         justify-content: space-between;
         width: 50%;
-
     }
 
 
@@ -77,9 +83,29 @@ h2 {
             border-radius: 50%;
             width: 50px;
             height: 50px;
-            background-color: blue;
             padding-top: 16px;
             margin-left: 0.5rem;
+            cursor: pointer;
+        }
+        #one {
+            background-image: url('../img/chips/chip2.png');
+            background-size: contain;
+        }
+        #five {
+            background-image: url('../img/chips/chip5.png');
+            background-size: contain;
+        }
+        #twentyfive {
+            background-image: url('../img/chips/chip25.png');
+            background-size: contain;
+        }
+        #hundred {
+            background-image: url('../img/chips/chip100.png');
+            background-size: contain;
+        }
+        #fivehundred {
+            background-image: url('../img/chips/chip500.png');
+            background-size: contain;
         }
         button {
             background-color: #AA0055;
@@ -113,6 +139,7 @@ h2 {
         padding: 0.5rem 1rem;
         border-radius: 12px;
         border: none;
+        display: none;
     }
 
 

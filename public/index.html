@@ -10,15 +10,19 @@
 </head>
 
 <body>
-
-  <div class="startgame">
+<div class="container">
+    <div class="startgame">
     <button id="startgame">Start Game</button>
-    <button id="newgame">New Game</button>
-
-  </div>
+    </div>
   <div class="blackjackboard">
+    <div class="heading">
+      <div class="startgame">
+          <button id="newgame">New Game</button>
+      
+        </div>
 
     <h1>BlackJack</h1>
+    </div>
 
     <div class="header">
       <h2>Dealer</h2>
@@ -39,11 +43,11 @@
 
     <div class="bet">
       <div class="chips">
-        <div class="chip">2</div>
-        <div class="chip">5</div>
-        <div class="chip">25</div>
-        <div class="chip">100</div>
-        <div class="chip">500</div>
+        <div id="one" class="chip">2</div>
+        <div id="five" class="chip">5</div>
+        <div id="twentyfive" class="chip">25</div>
+        <div id="hundred" class="chip">100</div>
+        <div id="fivehundred" class="chip">500</div>
       </div>
       <button id="placeBet">Place Bet</button>
       <button id="hit">Hit!</button>
@@ -67,7 +71,7 @@
 
     <p id="secretMessage"></p>
   </div>
-
+</div>
 
 
   <script src="js/jquery-3.3.1.min.js"></script>

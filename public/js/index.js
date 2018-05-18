@@ -17,6 +17,8 @@ $(document).ready(function () {
 
     $('#startgame').on('click', function () {
         $('.blackjackboard').css('display', 'block');
+        $('#startgame').css('display', 'none');
+        $('#newgame').css('display', 'block');
         cards = generate_cards();
         shuffle_array(cards);
         placeBet();
