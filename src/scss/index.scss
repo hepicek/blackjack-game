@@ -23,7 +23,6 @@ h2 {
     text-align: left;
 }
 
-
 .blackjackboard {
     text-align: center;
     background-color: #005E00;
@@ -46,6 +45,19 @@ h2 {
             height: auto;
         }
     }
+    // .startgame {
+    //     height: 300px; 
+    //     width: 200px;
+    //     background-color: blue;
+    // }
+    // #startgame {
+    //     background-color: #AA0055;
+    //     border: none;
+    //     width: 130px;
+    //     padding: 0.5rem 1rem;
+    //     border-radius: 12px;
+    //     margin-top: 1rem;
+    // }
     .bet {
         display: flex;
         justify-content: space-around;
