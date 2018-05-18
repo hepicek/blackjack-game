@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,63 +8,69 @@
   <link rel="stylesheet" href="css/index.css">
   <title>BlackJack</title>
 </head>
+
 <body>
-<div class="blackjackboard">
 
-  <h1>BlackJack</h1>
+    <div class="startgame">
+        <button id="startgame">Start Game</button>
+        <button id="endgame">End Game</button>
+  
+      </div>
+  <div class="blackjackboard">
 
-<h2>Player</h2>
-<div class="cards">
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
+    <h1>BlackJack</h1>
+
+ <div class="header">
+      <h2>Dealer</h2>
+      <h4>Score: <span id="dealerScore"></span></h4>
+ </div>
+    <div id="dealerCards" class="cards"></div>
+
+<div class="header">
+      <h2>Player</h2>
+      <h4>Score: <span id="playerScore"></span></h4>      
 </div>
-
-<h2>Dealer</h2>
-<div class="cards">
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-</div>
-
-<!-- <div class="startgame">
-    <button id="startgame">Start Game</button>
-</div> -->
-
-<div class="bet">
-<div class="chips">
-  <div class="chip">$2</div>
-  <div class="chip">$5</div>
-  <div class="chip">$25</div>
-  <div class="chip">$100</div>
-  <div class="chip">$500</div>
-</div>
-<button>Place Bet</button>
-</div>
-
-<div class="score">
-  <div class="bankroll">
-    <h3>Bankroll</h3>
-    <p>$1000</p>
-  </div>
-  <div class="betvalue">
-    <h3>Bet</h3>
-    <p>$500</p>
+    <div id="playersCards" class="cards">
+      <div class="card"></div>
     </div>
-  <div class="win">
-    <h3>Win</h3>
-    <p>1</p>
+
+
+
+    <div class="bet">
+      <div class="chips">
+        <div class="chip">2</div>
+        <div class="chip">5</div>
+        <div class="chip">25</div>
+        <div class="chip">100</div>
+        <div class="chip">500</div>
+      </div>
+      <button id="placeBet">Place Bet</button>
+      <button id="hit">Hit!</button>
+      <button id="stand">Stand! :-)</button>
+    </div>
+
+    <div class="score">
+      <div class="bankroll">
+        <h3>Bankroll</h3>
+        <p id="bankroll">1000</p>
+      </div>
+      <div class="betvalue">
+        <h3>Bet</h3>
+        <p id="betvalue">0</p>
+      </div>
+      <div class="win">
+        <h3>Win</h3>
+        <p>1</p>
+      </div>
+    </div>
+
   </div>
-</div>
-
-</div>
 
 
 
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/cards.js"></script>
-  <script src="/js/index.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/index.js"></script>
 </body>
+
 </html>

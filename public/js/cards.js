@@ -31,6 +31,11 @@ function Card(suit, rank) {
   this.rank = rank;
 }
 
+function Dealer(suit, rank) {
+  this.suit = suit;
+  this.rank = rank;
+}
+
 /* 
  * Generates an array of 52 playing cards.
  */
